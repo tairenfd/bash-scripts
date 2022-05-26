@@ -1,9 +1,12 @@
 #! /bin/bash
+while true;
+  do
+    btc=$(btc)
+    mem=$(memused) 
+    blue=$(bluetooth)
+    time=$(date '+%a %b %d | %H:%M ')
 
-bluetoothctl devices | 
-cut -f2 -d' ' | 
-while read uuid; do 
-  bluetoothctl info $uuid; 
-done | 
-grep -e "Name\|Connected: yes" | 
-grep -B1 "yes" | head -n 1 | cut -d\  -f2-
+    xsetroot -name "$blue| BTC: \$$btc | Used: $mem | $time "
+
+    sleep 5;
+done;
