@@ -1,9 +1,34 @@
 #!/bin/bash
 
+file_path="$HOME/.newsboat/urls"
+
 read -p "Enter any video url from the channel you wish to add to RSS feed: " channel
 
 id=$(youtube-viewer --no-interactive --extract '*CHANNELID*' $channel) 
 
 if [ "$id" != "" ]; then
-  echo "https://www.youtube.com/feeds/videos.xml?channel_id=$id" >> ~/.newsboat/urls
+  echo "https://www.youtube.com/feeds/videos.xml?channel_id=$id" >> $file_path
+  echo "Channel Id appended to $file_path"
 fi
+
+
+while true; do
+
+read -p "Add another? [y/n]: " loop
+
+case $loop in
+  [yY] )  echo "Okay, adding another!" 
+          sleep 1
+          break;;
+          
+  [nN] )  echo "Exiting..."
+          sleep 1
+          exit;;
+          
+  [*]  )  echo "Invalid";;
+esac
+          
+done
+
+exec add-yt-rss  
+  
