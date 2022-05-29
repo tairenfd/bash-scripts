@@ -1,0 +1,9 @@
+#!/bin/bash
+
+read -p "Enter any video url from the channel you wish to add to RSS feed: " channel
+
+id=$(youtube-viewer --no-interactive --extract '*CHANNELID*' $channel) 
+
+if [ "$id" != "" ]; then
+  echo "https://www.youtube.com/feeds/videos.xml?channel_id=$id" >> ~/.newsboat/urls
+fi
