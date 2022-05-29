@@ -1,0 +1,7 @@
+#!/bin/bash
+
+flags=$(youtube-viewer -h | grep '\-[[:alpha:]]' | fzf --multi | awk '{print $1}')
+
+read -p "If necessary add search terms, urls, channel names, etc: " input
+
+youtube-viewer -$flags $input
