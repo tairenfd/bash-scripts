@@ -1,0 +1,6 @@
+#!/bin/sh
+
+curl -s https://api.blockcypher.com/v1/btc/main |
+python -c 'import json, sys; 
+x = json.load(sys.stdin);
+print("Current Block Height: ", x["height"])'
