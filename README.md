@@ -1,9 +1,9 @@
-Scripts that do things I need or want
-_______________________________________
+                           Scripts that do things I need or want
+                          _______________________________________
 
 
 
-MY CREATIONS: ------------------
+                   ----------------- MY CREATIONS: ------------------
 
 add-yt-rss - Pulls channelid from a given youtube url and appends it to newsboat urls config.
                Prompts for multiple submissions. File_path can be modified to your liking. 
@@ -31,13 +31,13 @@ status - simple status bar using xsetroot -name, inspired
 pkglistupdater - just creates backup txt files of my currently installed packages 
 
 
-SUCKLESS.ORG: ------------------
+                    ---------------- SUCKLESS.ORG: ------------------
 
                                                                         
 dmenu_run_i - script from suckless.org site
 
 
-LUKE SMITH: --------------------
+                    ---------------- LUKE SMITH: --------------------
 
 lb & sup - great tools for easy management of a blog and rss feed for web-site hosting, I'd
               highly recommend checking out Luke Smith's youtube channel, github, or website
