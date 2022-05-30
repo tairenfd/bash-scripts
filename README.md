@@ -5,13 +5,13 @@
 
                    ----------------- MY CREATIONS: ------------------
 
-add-yt-rss - Pulls channelid from a given youtube url and appends it to newsboat urls config.
+yt-rsslink - Pulls channelid from a given youtube url and appends it to newsboat urls config.
                Prompts for multiple submissions. File_path can be modified to your liking. 
 
-youtube-playlist - opens given youtube playlist with any flags added with fzf. use tab to multi-
+yt-plist-run - opens given youtube playlist with any flags added with fzf. use tab to multi-
                       select, enter when finished with selections.
                       
-youtube-run - operates similarly to youtube-playlist, but prompts for search terms after flags are chosen
+yt-run - operates similarly to youtube-playlist, but prompts for search terms after flags are chosen
 
 memused - display current RAM usage
 
@@ -23,12 +23,12 @@ btc - outputs current price of 1 bitcoin
 
 bluetooth - lists currently connected bluetooth device
 
-connectbuds - quick connect to my galaxy buds
+bluebuds - quick connect to my galaxy buds
 
 status - simple status bar using xsetroot -name, inspired 
             by dwm_sss by git@joeiddon
             
-pkglistupdater - just creates backup txt files of my currently installed packages 
+pkglister - just creates backup txt files of my currently installed packages 
 
 
                     ---------------- SUCKLESS.ORG: ------------------

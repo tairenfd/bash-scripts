@@ -30,5 +30,4 @@ esac
           
 done
 
-exec add-yt-rss  
-  
+exec yt-rsslink 
