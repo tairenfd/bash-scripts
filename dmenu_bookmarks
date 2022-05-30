@@ -1,0 +1,11 @@
+#!/bin/sh
+
+url=$(
+cat ~/.config/urls  | 
+awk '{print $2 " - " $1}' |  
+dmenu -i -l 10 -g 5 | 
+awk '{print $3}' ||
+exit
+)
+
+lynx "$url"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 name="Tairen Dunham"
 webdir="$PWD"
 website="https://blog.tairenfd.xyz/" # Keep a trailing slash.

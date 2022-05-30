@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/sh
 
 bluetoothctl devices | 
 cut -f2 -d' ' | 

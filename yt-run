@@ -1,7 +1,15 @@
-#!/bin/bash
+#!/bin/sh
 
-flags=$(youtube-viewer -h | grep '\-[[:alpha:]]' | fzf --multi | awk '{print $1}')
+read -p "Add flags? [Yy/Nn/def:n]" set
 
-read -p "If necessary add search terms, urls, channel names, etc: " input
+case $set in
+  [yY] )      flags=$(youtube-viewer -h | grep '\-[[:alpha:]]' | fzf --multi | awk '{print $1}')
+              read -p "Add search terms, a url, channel names, etc: " input
+              youtube-viewer -$flags $input
+              break;;
 
-youtube-viewer -$flags $input
+  [nN] | * )  read -p "Add search terms, a url, channel names, etc: " input
+              youtube-viewer $input
+              break;;
+
+esac

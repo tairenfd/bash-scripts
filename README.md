@@ -30,6 +30,9 @@ status - simple status bar using xsetroot -name, inspired
             
 pkglister - just creates backup txt files of my currently installed packages 
 
+dmenu_bookmarks = reads bookmarks from a url file, launches to browser
+
+dmenu_scripts = dmenu script to run another script
 
                     ---------------- SUCKLESS.ORG: ------------------
 

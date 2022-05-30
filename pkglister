@@ -5,3 +5,5 @@ p=$(date +%m-%d)
 sudo pacman -Qe >> ~/Documents/pkglistbackups/$p-explicitinstall-pkglist.txt
 sudo pacman -Q >> ~/Documents/pkglistbackups/$p-all-pkglist.txt
 sudo pacman -Qem >> ~/Documents/pkglistbackups/$p-not-aur-pkglist.txt
+
+exit
