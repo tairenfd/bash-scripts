@@ -2,13 +2,28 @@
 
 file_path="$HOME/.newsboat/urls"
 
-read -p "Enter any video url from the channel you wish to add to RSS feed: " channel
+echo "Enter desired search term, then choose a video from any channel you wish to add an rss feed for."
 
-id=$(youtube-viewer --no-interactive --extract '*CHANNELID*' $channel) 
+read -p "Search --> " search
+
+if [ "$search" = "" ]; then
+  echo "no search term"
+  echo "exiting..."
+  exit
+fi
+
+video=$(ytfzf -t -L "$search")
+
+id=$(youtube-viewer --no-interactive --extract '*CHANNELID*' $video) 
 
 if [ "$id" != "" ]; then
   echo "https://www.youtube.com/feeds/videos.xml?channel_id=$id" >> $file_path
   echo "Channel Id appended to $file_path"
+else
+  echo "no selection made..."
+  echo "exiting..."
+  sleep 1
+  exit
 fi
 
 
