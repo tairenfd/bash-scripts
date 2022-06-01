@@ -1,11 +1,10 @@
 #!/bin/sh
 
-url=$(
-cat ~/.config/urls  | 
-awk '{print $2 " - " $1}' |  
-dmenu -i -l 10 -g 5 | 
-awk '{print $3}' ||
-exit
-)
+dmenu="dmenu -i -l 10 -g 5"
 
-lynx "$url"
+url=$(cat ~/.config/qutebrowser/bookmarks/urls | 
+awk '{print $2 " - " $1}' |  
+eval $dmenu | 
+awk '{print $3}') 
+
+qutebrowser $url

@@ -1,0 +1,42 @@
+#!/bin/sh
+
+file_path="$HOME/.newsboat/urls"
+
+echo "Enter desired search term, then choose a video from any channel you wish to add an rss feed for."
+
+info=$(ytfzf -t -L)
+
+url=$(echo "$info" | awk '$0 ~ /^http/')
+
+id=$(youtube-viewer --no-interactive --extract '*CHANNELID*' $url) 
+
+if [ "$id" != "" ]; then
+  echo "https://www.youtube.com/feeds/videos.xml?channel_id=$id" >> $file_path
+  echo "Channel Id \"$id\" appended to $file_path"
+else
+  echo "no selection made..."
+  echo "exiting..."
+  sleep 1
+  exit
+fi
+
+
+while true; do
+
+read -p "Add another? [y/n]: " loop
+
+case $loop in
+  [yY] )  echo "Okay, adding another!" 
+          sleep 1
+          break;;
+          
+  [nN] )  echo "Exiting..."
+          sleep 1
+          exit;;
+          
+  [*]  )  echo "Invalid";;
+esac
+          
+done
+
+exec yt-rsslink 

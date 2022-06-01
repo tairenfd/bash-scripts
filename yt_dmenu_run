@@ -1,0 +1,29 @@
+#!/bin/sh
+
+TMPDIR=$HOME
+
+TMPFILE=$(mktemp -t changes.XXXXXXXX) || exit 1 
+
+flags_sel=$(man ytfzf| 
+awk  '$1 ~ /^-/' | 
+dmenu -g 5 -l 10 -p "CTRL-ENTER adds options. CTRL-c to finalize selections. ESC to exit program")
+ 
+flags=$(echo "$flags_sel" | awk '{print $1}' | 
+sed 's/,//g')
+
+echo "flags chosen: $flags"
+
+read -p "Edit flags before running? [y/n]" opt
+
+/bin/sh -c 'echo "$flags" >> "$TMPFILE"'
+
+case $opt in
+    [Yy]         )  /bin/sh -c '$EDITOR "$TMPFILE" 3>&1 1>&2 2>&3'
+                    flags=$(cat "$TMPFILE")
+                    /bin/sh -c 'rm -f "$TMPFILE"'
+                    break;;
+                                        
+    [Nn] | [*]  )   break;;
+esac
+
+ytfzf $flags

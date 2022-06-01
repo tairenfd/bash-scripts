@@ -1,0 +1,24 @@
+#!/bin/sh
+
+TMPFILE=$(mktemp -t changes.XXXXXXXX) || exit 1 
+
+flags=$(man ytfzf| 
+awk  '$1 ~ /^-/' | 
+fzf -m --marker='+ ' --header="TAB adds/removes options, ENTER to continue, ESC to exit" | 
+awk '{print $1}' | 
+sed 's/,//g')
+
+echo "$flags" >> "$TMPFILE"
+
+read -p "Edit flags before running? [y/n]" opt
+
+case $opt in
+    [Yy]         )  $EDITOR "$TMPFILE" 3>&1 1>&2 2>&3
+                    flags=$(cat "$TMPFILE")
+                    rm -f "$TMPFILE"
+                    break;;
+                                        
+    [Nn] | [*]  )   break;;
+esac
+
+ytfzf $flags

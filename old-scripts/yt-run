@@ -5,7 +5,7 @@ read -p "Add flags? [Yy/Nn/def:n]" set
 case $set in
   [yY] )      flags=$(youtube-viewer -h | grep '\-[[:alpha:]]' | fzf --multi | awk '{print $1}')
               read -p "Add search terms, a url, channel names, etc: " input
-              youtube-viewer -$flags $input
+              youtube-viewer $flags $input
               break;;
 
   [nN] | * )  read -p "Add search terms, a url, channel names, etc: " input

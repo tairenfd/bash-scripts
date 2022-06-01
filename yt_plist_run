@@ -4,7 +4,7 @@ read -p "Add flags? [Yy/Nn/def:n]" set
 
 case $set in
   [yY] )          flags=$(youtube-viewer -h | grep '\-[[:alpha:]]' | fzf --multi | awk '{print $1}')
-                  youtube-viewer -$flags https://www.youtube.com/playlist?list=PL4Qx7EQ-9EuZpdZs4SW0yia5Zo163bPCK
+                  youtube-viewer $flags https://www.youtube.com/playlist?list=PL4Qx7EQ-9EuZpdZs4SW0yia5Zo163bPCK
                   break;;
               
   [nN] | * )      youtube-viewer --pid=PL4Qx7EQ-9EuZpdZs4SW0yia5Zo163bPCK
