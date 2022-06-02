@@ -10,5 +10,5 @@ exit
 if [ "$run" = "" ]; then
   exit
 else
-  kitty --hold sh -c $run
+  $run
 fi
