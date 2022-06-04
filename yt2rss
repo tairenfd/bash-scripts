@@ -2,11 +2,7 @@
 
 file_path="$HOME/.newsboat/urls"
 
-echo "Enter desired search term, then choose a video from any channel you wish to add an rss feed for."
-
-info=$(ytfzf -t -L)
-
-url=$(echo "$info" | awk '$0 ~ /^http/')
+read -p "Enter a URL of any video from channel you'd like to add: " url
 
 id=$(youtube-viewer --no-interactive --extract '*CHANNELID*' $url) 
 
