@@ -1,10 +1,1 @@
-#/bin/sh
-
-p=$(date +%m-%d)
-dir="$HOME/Documents/pkglistbackups"
-sudo pacman -Qe >> $dir/$p-explicitinstall-pkglist.txt
-sudo pacman -Q >> $dir/$p-all-pkglist.txt
-sudo pacman -Qem >> $dir/$p-not-aur-pkglist.txt
-LC_ALL=C pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h >> $dir/$p-sizes-pkglist.txt
-
-exit
+pkglister

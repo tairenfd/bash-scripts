@@ -1,14 +1,1 @@
-#!/bin/sh
-
-dmenu="dmenu -i -l 10 -g 5"
-
-url=$(cat ~/.config/qutebrowser/bookmarks/urls | 
-awk '{print $2 " - " $1}' |  
-eval $dmenu | 
-awk '{print $3}') 
-
-if [ "$url" != "" ]; then
-  qutebrowser $url
-else
-  exit
-fi
+dmenu_bookmarks

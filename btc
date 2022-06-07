@@ -1,6 +1,1 @@
-#!/bin/sh
-
-curl -s http://api.coindesk.com/v1/bpi/currentprice.json |
-python -c "import json, sys; 
-x = json.load(sys.stdin)['bpi']['USD']['rate_float'];
-print('{:,.2f}'.format(x))"
+btc
