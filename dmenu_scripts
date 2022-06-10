@@ -1,1 +1,14 @@
-dmenu_scripts
+#!/bin/sh
+
+run=$(
+ls ~/.config/scripts | 
+awk '{print $1}' |  
+dmenu -i -l 10 -g 5 ||
+exit
+)
+
+if [ "$run" = "" ]; then
+  exit
+else
+  $run
+fi
