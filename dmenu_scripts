@@ -1,14 +1,7 @@
 #!/bin/sh
 
-run=$(
 ls ~/.config/scripts | 
 awk '{print $1}' |  
-dmenu -i -l 10 -g 5 ||
+dmenu -l 10 |
+$SHELL ||
 exit
-)
-
-if [ "$run" = "" ]; then
-  exit
-else
-  $run
-fi
