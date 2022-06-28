@@ -3,7 +3,8 @@
 
 
 
-                   ----------------- MY CREATIONS: ------------------
+MY CREATIONS:
+-------------
 
 yt2rss - Search using ytfzf, find a video from the channel you'd like to add, this appends 
           it to newsboat urls config. Prompts for multiple submissions. File path can be 
@@ -36,13 +37,15 @@ dmenu_bookmarks = reads bookmarks from a url file in dmenu, launches to browser
 
 dmenu_scripts = dmenu script to run other scripts through the dmenu
 
-                    ---------------- SUCKLESS.ORG: ------------------
+SUCKLESS.ORG:
+-------------
 
                                                                         
 dmenu_run_i - script from suckless.org site
 
 
-                    ---------------- LUKE SMITH: --------------------
+LUKE SMITH:
+-----------
 
 lb & sup - great tools for easy management of a blog and rss feed for web-site hosting, I'd
               highly recommend checking out Luke Smith's youtube channel, github, or website
