@@ -11,7 +11,7 @@ suffix='/.git'
 repo=$(locate -ber \\.git$ | 
 grep '\/home\/turn\/Documents\/\|\/home\/turn\/.config\/' |
 cut -d '/' -f5 |
-fzf)
+dmenu -l 10)
   
 repodir=$(locate -ber \\.git$ |
 grep "$HOME\/Documents\/$repo\|$HOME\/.config\/$repo")
@@ -19,3 +19,15 @@ grep "$HOME\/Documents\/$repo\|$HOME\/.config\/$repo")
 clear
 cd "${repodir%$suffix}"
 git status
+
+read -p "view another? [y/n] : " next
+
+case $next in
+  [yY])
+    exec list-repos
+    ;;
+    
+  *   )
+    cd "${repodir%$suffix}"
+    ;;
+esac
