@@ -37,6 +37,13 @@ dmenu_bookmarks = reads bookmarks from a url file in dmenu, launches to browser
 
 dmenu_scripts = dmenu script to run other scripts through the dmenu
 
+monitors = just sets xrandr
+
+xset-noblank = turns off screen blanking
+
+list-repos = list of directories where my active repos are - shows current git status 
+              (does not show all system repos, just select repos)
+
 SUCKLESS.ORG:
 -------------
 
