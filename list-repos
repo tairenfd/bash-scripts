@@ -20,14 +20,15 @@ clear
 cd "${repodir%$suffix}"
 git status
 
-read -p "view another? [y/n] : " next
+echo 'view another? [y/n]'
+read next
 
 case $next in
-  [yY])
+  [yY] )
     exec list-repos
     ;;
     
-  *   )
+  * )
     cd "${repodir%$suffix}"
     ;;
 esac
